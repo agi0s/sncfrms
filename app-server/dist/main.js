@@ -8084,8 +8084,12 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)
+            ],
+            exports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]
+            ]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -8205,8 +8209,12 @@ var AppModule = /** @class */ (function () {
                 _modules_material_material__WEBPACK_IMPORTED_MODULE_5__["MaterialModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"]
             ],
-            providers: [_services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            providers: [
+                _services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]
+            ],
+            bootstrap: [
+                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]
+            ]
         })
     ], AppModule);
     return AppModule;
@@ -8262,8 +8270,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
     }
-    HeaderComponent.prototype.ngOnInit = function () {
-    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", String)
@@ -8273,8 +8279,7 @@ var HeaderComponent = /** @class */ (function () {
             selector: 'app-header',
             template: __webpack_require__(/*! ./header.component.html */ "./src/app/components/header/header.component.html"),
             styles: [__webpack_require__(/*! ./header.component.scss */ "./src/app/components/header/header.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], HeaderComponent);
     return HeaderComponent;
 }());
