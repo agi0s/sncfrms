@@ -23,7 +23,7 @@
 
 8. To stop the application, press `CTRL+C`
 
-## Install dependencies for testing frontend
+## Enable real-time development environment
 1. Open `Git Bash`.
 2. Change the current working directory to app-client
 ```
@@ -33,10 +33,13 @@
 ```
  npm install
 ```
-4. Сommand to run the application
+4. Сommand to run changes-watcher in app-client
 ```
- ng serve
+ ng build --watch
 ```
-5. Open in your browser address [localhost:4200](http://localhost:4200)
-
-6. To stop the application, press `CTRL+C`
+5. Open second terminal, run app-server changes watcher from root project folder
+```
+ npx nodemon
+```
+6. Open in your browser address [localhost:3000](http://localhost:3000)
+7. To stop the application, press `CTRL+C`
