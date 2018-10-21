@@ -35,7 +35,7 @@
 ```
 4. Сommand to run the application
 ```
- npm start
+ ng serve
 ```
 5. Open in your browser address [localhost:4200](http://localhost:4200)
 
