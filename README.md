@@ -33,11 +33,12 @@
 ```
  npm install
 ```
-4. Сommand to run changes-watcher in app-client
+4. Сommand to run changes-watcher in app-client and keep it running
 ```
  ng build --watch
 ```
 5. Open second terminal, run app-server changes watcher from root project folder
+and keep it running
 ```
  npx nodemon
 ```
