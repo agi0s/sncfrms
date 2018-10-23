@@ -11,6 +11,7 @@ router.get('/team', teamCtrl.getTeam); // get all the team players
 
 router.post('/auth', passport.authenticate('local'), usersController.loginUser);
 router.get('/logout', usersController.logoutUser);
+router.post('/registration', usersController.registerUser);
 
 // only for test
 router.get('/', checkAuth, (req, res) => {
