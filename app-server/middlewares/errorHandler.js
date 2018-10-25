@@ -12,7 +12,7 @@ module.exports = function errorHandler(err, req, res, next) {
     if (err.message === 'Username is already in use') {
         return res.status(err.statusCode).send(err.message);
     } else if (err.statusCode === 401) {
-        return res.redirect(err.statusCode, '/');
+        return res.redirect('/login');
     } else {
         return res.sendStatus(500);
     }
