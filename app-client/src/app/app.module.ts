@@ -12,6 +12,7 @@ import { HttpService } from './services/http.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
         HeaderComponent
     ],
     imports: [
+        AuthModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
