@@ -50,5 +50,4 @@ var gracefulShutdown = function(msg, callback) {
     });
 };
 
-require('./teamSchema');
-
+module.exports.mongoose = mongoose;

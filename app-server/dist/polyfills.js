@@ -8127,7 +8127,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/agios/Desktop/softserve_project/syncforms/app-client/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! D:\syncforms\app-client\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

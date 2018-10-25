@@ -1,11 +1,13 @@
 const User = require('../schemas/userSchema');
 const passport = require('passport');
 
-exports.registerUser = function(req, res) {
+exports.registerUser = function(req, res, next) {
     User.findOne({username: req.body.username})
     .then(user => {
         if (user) {
-            throw new Error('Username is already in use');
+            let err = new Error('Username is already in use');
+            err.statusCode = 400;
+            throw err;
         }
     })
     .then(() => {
@@ -22,15 +24,7 @@ exports.registerUser = function(req, res) {
             return res.send(req.user);
         });
     })    
-    .catch(err => {
-        console.log(err);
-
-        if (err.message === 'Username is already in use') {
-            return res.status(400).send(err.message);
-        } else {
-            return res.sendStatus(500);
-        }
-    });
+    .catch(err => next(err));
 }
 
 exports.loginUser = function(req, res) {

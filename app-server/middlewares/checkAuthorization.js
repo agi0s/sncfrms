@@ -3,6 +3,7 @@ module.exports = function checkAuthorization(req, res, next) {
         return next();
     }
 
-    // return res.redirect('/');
-    return res.sendStatus(401);
+    let err = new Error('Unauthorized');
+    err.statusCode = 401;
+    next(err);
 }

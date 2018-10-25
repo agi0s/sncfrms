@@ -1,5 +1,6 @@
 var express = require('express');
 var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,12 +9,12 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('./app-server/schemas/userSchema');
+var { mongoose } = require('./app-server/schemas/db');
 var config = require('./app-server/config');
+var errorHandler = require('./app-server/middlewares/errorHandler');
 
 require("./app-server/schemas/db");
 
-var index = require('./app-server/routes/index');
 var usersRouter = require('./app-server/routes/usersRouter');
 
 var authorizeUser = require('./app-server/middlewares/authorizeUser');
@@ -32,10 +33,11 @@ app.use(cookieParser());
 app.use(express.static(__dirname + '/app-server/dist/')); // !
 app.use(session({
     secret: config.sessionSecret,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: (60 * 60) * 8 * 1000 // 8 hours
+        maxAge: (60 * 60) * 2 * 1000 // 2 hours
     }
 }));
 app.use(passport.initialize());
@@ -44,8 +46,6 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy(authorizeUser));
 
-//app.use('/', index);
-//app.use('/', usersRouter);
 app.use('/users', usersRouter);
 
 app.get('/*', (req, res) => {
@@ -59,15 +59,6 @@ app.use(function (req, res, next) {
     next(err);
 });
 
-// error handler
-app.use(function (err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
-});
+app.use(errorHandler);
 
 module.exports = app;
