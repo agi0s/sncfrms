@@ -79,3 +79,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 import 'hammerjs';
+
+// fix for socket's error
+(window as any).global = window;

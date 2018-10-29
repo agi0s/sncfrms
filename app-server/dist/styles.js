@@ -573,7 +573,7 @@ if(false) {}
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**************************************************************************************************************!*\
   !*** multi ./node_modules/@angular/material/prebuilt-themes/indigo-pink.css ./src/assets/styles/styles.scss ***!
   \**************************************************************************************************************/
@@ -586,5 +586,5 @@ module.exports = __webpack_require__(/*! D:\syncforms\app-client\src\assets\styl
 
 /***/ })
 
-},[[2,"runtime"]]]);
+},[[3,"runtime"]]]);
 //# sourceMappingURL=styles.js.map

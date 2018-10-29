@@ -1,0 +1,55 @@
+<div class="interview-page">
+  <div class="form-window"
+    (click)="catchClick($event)"
+    (keypress)="catchTextInput($event)"
+    (keyup.backspace)="catchBackspace($event)"
+    (change)="catchSelectChange($event)"
+    [formGroup]="testForm"
+  >
+    <p>Usual form</p>
+    <label>
+      Check 1
+      <input type="checkbox" formControlName="check1">
+    </label>
+    <label>
+      Check 2
+      <input type="radio" formControlName="check2">
+    </label>
+    <label>
+      Check 3
+      <input type="checkbox" formControlName="check3">
+    </label>
+    <br><br>
+    <label>
+      Field 1
+      <input
+        type="text"
+        id="input1"
+        placeholder="ready"
+        formControlName="input1"
+      >
+    </label>
+    <br><br>
+    <label>
+      Field 2
+      <input
+        type="text"
+        placeholder="ready"
+        formControlName="input2"
+      >
+    </label>
+    <br><br>
+    <label>
+      Food
+      <select formControlName="select1">
+        <option value="Onions">Onions</option>
+        <option value="Potato">Potato</option>
+        <option value="Pizza">Pizza</option>
+      </select>
+    </label>
+    <br>
+    <button id="clicky" class="hovered" (click)="turnClick()">Boom!</button>
+    <p>You clicked {{clickedTimes}} times</p>
+  </div>
+</div>
+<input [value]="mousePos">

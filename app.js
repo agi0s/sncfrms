@@ -20,6 +20,8 @@ var usersRouter = require('./app-server/routes/usersRouter');
 var authorizeUser = require('./app-server/middlewares/authorizeUser');
 
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app-server/views'));
@@ -48,8 +50,28 @@ passport.use(new LocalStrategy(authorizeUser));
 
 app.use('/users', usersRouter);
 
+app.get('/socket', (req, res) => {
+    console.log(socketIo.io.on);
+    res.sendStatus(200);
+});
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/app-server/dist/index.html'));
+});
+
+io.on('connection', function(socket) {
+    console.log('user connected');
+    socket.on('click', function(data) {
+        socket.broadcast.emit('mouseClick', data);
+    });
+
+    socket.on('keyPress', function(data) {
+        socket.broadcast.emit('newKeyPress', data);
+    });
+
+    socket.on('selectChange', function(data) {
+        socket.broadcast.emit('newSelect', data);
+    });
 });
 
 // catch 404 and forward to error handler
@@ -61,4 +83,4 @@ app.use(function (req, res, next) {
 
 app.use(errorHandler);
 
-module.exports = app;
+module.exports = { app: app, server: server };

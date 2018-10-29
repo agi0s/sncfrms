@@ -8116,11 +8116,13 @@ __webpack_require__.r(__webpack_exports__);
  * APPLICATION IMPORTS
  */
 
+// fix for socket's error
+window.global = window;
 
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!********************************!*\
   !*** multi ./src/polyfills.ts ***!
   \********************************/
@@ -8132,5 +8134,5 @@ module.exports = __webpack_require__(/*! D:\syncforms\app-client\src\polyfills.t
 
 /***/ })
 
-},[[1,"runtime"]]]);
+},[[2,"runtime"]]]);
 //# sourceMappingURL=polyfills.js.map

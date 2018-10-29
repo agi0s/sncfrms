@@ -8071,6 +8071,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _sockets_sockets_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sockets/sockets.component */ "./src/app/sockets/sockets.component.ts");
+/* harmony import */ var _master_interview_master_interview_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./master-interview/master-interview.component */ "./src/app/master-interview/master-interview.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8080,7 +8082,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var routes = [];
+
+
+var routes = [
+    { path: 'candidate', component: _sockets_sockets_component__WEBPACK_IMPORTED_MODULE_3__["SocketsComponent"] },
+    { path: 'master', component: _master_interview_master_interview_component__WEBPACK_IMPORTED_MODULE_4__["MasterInterviewComponent"] }
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -8174,10 +8181,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _modules_material_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/material/material */ "./src/app/modules/material/material.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/header/header.component */ "./src/app/components/header/header.component.ts");
-/* harmony import */ var _modules_auth_auth_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/auth/auth.module */ "./src/app/modules/auth/auth.module.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_header_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/header/header.component */ "./src/app/components/header/header.component.ts");
+/* harmony import */ var _modules_auth_auth_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/auth/auth.module */ "./src/app/modules/auth/auth.module.ts");
+/* harmony import */ var _sockets_sockets_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./sockets/sockets.component */ "./src/app/sockets/sockets.component.ts");
+/* harmony import */ var _master_interview_master_interview_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./master-interview/master-interview.component */ "./src/app/master-interview/master-interview.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8195,28 +8205,34 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                _components_header_header_component__WEBPACK_IMPORTED_MODULE_9__["HeaderComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
+                _components_header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
+                _sockets_sockets_component__WEBPACK_IMPORTED_MODULE_12__["SocketsComponent"],
+                _master_interview_master_interview_component__WEBPACK_IMPORTED_MODULE_13__["MasterInterviewComponent"]
             ],
             imports: [
-                _modules_auth_auth_module__WEBPACK_IMPORTED_MODULE_10__["AuthModule"],
+                _modules_auth_auth_module__WEBPACK_IMPORTED_MODULE_11__["AuthModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _modules_material_material__WEBPACK_IMPORTED_MODULE_5__["MaterialModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]
             ],
             providers: [
-                _services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]
+                _services_http_service__WEBPACK_IMPORTED_MODULE_8__["HttpService"]
             ],
             bootstrap: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]
             ]
         })
     ], AppModule);
@@ -8357,6 +8373,167 @@ var ConfirmEqualValidatorDirective = /** @class */ (function () {
         })
     ], ConfirmEqualValidatorDirective);
     return ConfirmEqualValidatorDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-interview/master-interview.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/master-interview/master-interview.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"interview-page\">\n  <div class=\"form-window\"\n    (click)=\"catchClick($event)\"\n    (keypress)=\"catchTextInput($event)\"\n    (keyup.backspace)=\"catchBackspace($event)\"\n    (change)=\"catchSelectChange($event)\"\n    [formGroup]=\"testForm\"\n  >\n    <p>Usual form</p>\n    <label>\n      Check 1\n      <input type=\"checkbox\" formControlName=\"check1\">\n    </label>\n    <label>\n      Check 2\n      <input type=\"radio\" formControlName=\"check2\">\n    </label>\n    <label>\n      Check 3\n      <input type=\"checkbox\" formControlName=\"check3\">\n    </label>\n    <br><br>\n    <label>\n      Field 1\n      <input\n        type=\"text\"\n        id=\"input1\"\n        placeholder=\"ready\"\n        formControlName=\"input1\"\n      >\n    </label>\n    <br><br>\n    <label>\n      Field 2\n      <input\n        type=\"text\"\n        placeholder=\"ready\"\n        formControlName=\"input2\"\n      >\n    </label>\n    <br><br>\n    <label>\n      Food\n      <select formControlName=\"select1\">\n        <option value=\"Onions\">Onions</option>\n        <option value=\"Potato\">Potato</option>\n        <option value=\"Pizza\">Pizza</option>\n      </select>\n    </label>\n    <br>\n    <button id=\"clicky\" class=\"hovered\" (click)=\"turnClick()\">Boom!</button>\n    <p>You clicked {{clickedTimes}} times</p>\n  </div>\n</div>\n<input [value]=\"mousePos\">\n"
+
+/***/ }),
+
+/***/ "./src/app/master-interview/master-interview.component.scss":
+/*!******************************************************************!*\
+  !*** ./src/app/master-interview/master-interview.component.scss ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "p {\n  font-size: 18px; }\n\n.form-window {\n  width: 300px;\n  padding: 5px;\n  background-color: #b3faff;\n  border: 3px solid #7c7af8;\n  margin-left: 30px;\n  margin-top: 30px;\n  text-align: center; }\n\nselect {\n  margin-bottom: 20px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/master-interview/master-interview.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/master-interview/master-interview.component.ts ***!
+  \****************************************************************/
+/*! exports provided: MasterInterviewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MasterInterviewComponent", function() { return MasterInterviewComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_socket_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/socket-service.service */ "./src/app/services/socket-service.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MasterInterviewComponent = /** @class */ (function () {
+    function MasterInterviewComponent(socketService) {
+        this.socketService = socketService;
+        this.mouseEventOptions = {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            which: 1
+        };
+        this.testForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            check1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            check2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            check3: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            input1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            input2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            select1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('Onions')
+        });
+        this.mousePos = '0';
+        this.clickedTimes = 0;
+    }
+    MasterInterviewComponent.prototype.onMouseMove = function (e) {
+        this.mousePos = e.clientX + " " + e.clientY;
+    };
+    MasterInterviewComponent.prototype.turnClick = function () {
+        this.clickedTimes++;
+    };
+    MasterInterviewComponent.prototype.ngOnInit = function () {
+        this.clickEventEmitter();
+        this.keyEventEmitter();
+        this.changeSelectState();
+    };
+    MasterInterviewComponent.prototype.clickEventEmitter = function () {
+        var _this = this;
+        this.socketService.getClickEvent()
+            .subscribe(function (event) {
+            var targetElement = document.elementFromPoint(event[0], event[1]);
+            var activeElement = document.activeElement;
+            var mouseEvent = new MouseEvent('click', _this.mouseEventOptions);
+            console.log(targetElement);
+            activeElement.blur();
+            targetElement.dispatchEvent(mouseEvent);
+            targetElement.focus();
+        });
+    };
+    MasterInterviewComponent.prototype.keyEventEmitter = function () {
+        var _this = this;
+        this.socketService.getKeyEvent()
+            .subscribe(function (event) {
+            _this.testForm.controls[event.targetElement].setValue(event.newValue);
+        });
+    };
+    MasterInterviewComponent.prototype.changeSelectState = function () {
+        var _this = this;
+        this.socketService.getSelectEvent()
+            .subscribe(function (event) {
+            _this.testForm.controls[event.targetElement].setValue(event.newValue);
+        });
+    };
+    MasterInterviewComponent.prototype.catchClick = function (event) {
+        if (!event.isTrusted) { // if event initiated programatically
+            return; // don't react to it
+        }
+        if (event.clientX + event.clientY === 0) {
+            return;
+        }
+        console.log([event.clientX, event.clientY]);
+        this.socketService.sendClick([event.clientX, event.clientY]);
+    };
+    MasterInterviewComponent.prototype.catchTextInput = function (event) {
+        var newValue = event.target.value + event.key;
+        this.keyboardEventHandler(event, newValue);
+    };
+    MasterInterviewComponent.prototype.catchBackspace = function (event) {
+        var newValue = event.target.value;
+        this.keyboardEventHandler(event, newValue);
+    };
+    MasterInterviewComponent.prototype.keyboardEventHandler = function (event, newValue) {
+        var eventInfo = {
+            targetElement: event.target.getAttribute('formcontrolname'),
+            newValue: newValue
+        };
+        this.socketService.sendKeysEvent(eventInfo);
+    };
+    MasterInterviewComponent.prototype.catchSelectChange = function (event) {
+        if (event.target.nodeName !== 'SELECT') { // prevent events from checkboxes
+            return;
+        }
+        var eventInfo = {
+            targetElement: event.target.getAttribute('formcontrolname'),
+            newValue: event.target.value
+        };
+        this.socketService.sendSelectEvent(eventInfo);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:mousemove', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], MasterInterviewComponent.prototype, "onMouseMove", null);
+    MasterInterviewComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-master-interview',
+            template: __webpack_require__(/*! ./master-interview.component.html */ "./src/app/master-interview/master-interview.component.html"),
+            styles: [__webpack_require__(/*! ./master-interview.component.scss */ "./src/app/master-interview/master-interview.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_socket_service_service__WEBPACK_IMPORTED_MODULE_2__["SocketService"]])
+    ], MasterInterviewComponent);
+    return MasterInterviewComponent;
 }());
 
 
@@ -8767,6 +8944,258 @@ var HttpService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/socket-service.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/socket-service.service.ts ***!
+  \****************************************************/
+/*! exports provided: SocketService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketService", function() { return SocketService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_3__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var SocketService = /** @class */ (function () {
+    function SocketService() {
+        this.url = 'http://localhost:3000/';
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_3___default.a.connect(this.url);
+    }
+    SocketService.prototype.sendClick = function (coordinates) {
+        this.socket.emit('click', coordinates);
+    };
+    SocketService.prototype.sendKeysEvent = function (eventInfo) {
+        this.socket.emit('keyPress', eventInfo);
+    };
+    SocketService.prototype.sendSelectEvent = function (eventInfo) {
+        this.socket.emit('selectChange', eventInfo);
+    };
+    SocketService.prototype.getClickEvent = function () {
+        var _this = this;
+        var eventObservable = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](function (observer) {
+            _this.socket.on('mouseClick', function (data) {
+                observer.next(data);
+            });
+            return function () {
+                _this.socket.disconnect();
+            };
+        });
+        return eventObservable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["debounceTime"])(50)); // debounce for prevent doubleclick
+    }; // bug of label
+    SocketService.prototype.getKeyEvent = function () {
+        var _this = this;
+        var eventObservable = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](function (observer) {
+            _this.socket.on('newKeyPress', function (data) {
+                observer.next(data);
+            });
+            return function () {
+                _this.socket.disconnect();
+            };
+        });
+        return eventObservable;
+    };
+    SocketService.prototype.getSelectEvent = function () {
+        var _this = this;
+        var eventObservable = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](function (observer) {
+            _this.socket.on('newSelect', function (data) {
+                observer.next(data);
+            });
+            return function () {
+                _this.socket.disconnect();
+            };
+        });
+        return eventObservable;
+    };
+    SocketService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], SocketService);
+    return SocketService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/sockets/sockets.component.html":
+/*!************************************************!*\
+  !*** ./src/app/sockets/sockets.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"interview-page\">\n  <div class=\"form-window\"\n    (click)=\"catchClick($event)\"\n    (keypress)=\"catchTextInput($event)\"\n    (keyup.backspace)=\"catchBackspace($event)\"\n    (change)=\"catchSelectChange($event)\"\n    [formGroup]=\"testForm\"\n  >\n    <p>Usual form</p>\n    <label>\n      Check 1\n      <input type=\"checkbox\" formControlName=\"check1\">\n    </label>\n    <label>\n      Check 2\n      <input type=\"radio\" formControlName=\"check2\">\n    </label>\n    <label>\n      Check 3\n      <input type=\"checkbox\" formControlName=\"check3\">\n    </label>\n    <br><br>\n    <label>\n      Field 1\n      <input\n        type=\"text\"\n        id=\"input1\"\n        placeholder=\"ready\"\n        formControlName=\"input1\"\n      >\n    </label>\n    <br><br>\n    <label>\n      Field 2\n      <input\n        type=\"text\"\n        placeholder=\"ready\"\n        formControlName=\"input2\"\n      >\n    </label>\n    <br><br>\n    <label>\n      Food\n      <select formControlName=\"select1\">\n        <option value=\"Onions\">Onions</option>\n        <option value=\"Potato\">Potato</option>\n        <option value=\"Pizza\">Pizza</option>\n      </select>\n    </label>\n    <br>\n    <button id=\"clicky\" class=\"hovered\" (click)=\"turnClick()\">Boom!</button>\n    <p>You clicked {{clickedTimes}} times</p>\n  </div>\n</div>\n<input [value]=\"mousePos\">\n"
+
+/***/ }),
+
+/***/ "./src/app/sockets/sockets.component.scss":
+/*!************************************************!*\
+  !*** ./src/app/sockets/sockets.component.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "p {\n  font-size: 18px; }\n\n.form-window {\n  width: 300px;\n  padding: 5px;\n  background-color: #dadafc;\n  border: 3px solid #7c7af8;\n  margin-left: 30px;\n  margin-top: 30px;\n  text-align: center; }\n\nselect {\n  margin-bottom: 20px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/sockets/sockets.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/sockets/sockets.component.ts ***!
+  \**********************************************/
+/*! exports provided: SocketsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketsComponent", function() { return SocketsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_socket_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/socket-service.service */ "./src/app/services/socket-service.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SocketsComponent = /** @class */ (function () {
+    function SocketsComponent(socketService) {
+        this.socketService = socketService;
+        this.mouseEventOptions = {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            which: 1,
+        };
+        this.testForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            check1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            check2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            check3: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            input1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            input2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            select1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('Onions')
+        });
+        this.mousePos = '0';
+        this.clickedTimes = 0;
+    }
+    SocketsComponent.prototype.onMouseMove = function (e) {
+        this.mousePos = e.clientX + " " + e.clientY;
+    };
+    SocketsComponent.prototype.turnClick = function () {
+        this.clickedTimes++;
+    };
+    SocketsComponent.prototype.ngOnInit = function () {
+        this.clickEventEmitter();
+        this.keyEventEmitter();
+        this.changeSelectState();
+    };
+    SocketsComponent.prototype.clickEventEmitter = function () {
+        var _this = this;
+        this.socketService.getClickEvent()
+            .subscribe(function (event) {
+            var targetElement = document.elementFromPoint(event[0], event[1]);
+            var activeElement = document.activeElement;
+            var mouseEvent = new MouseEvent('click', _this.mouseEventOptions);
+            console.log(targetElement);
+            activeElement.blur();
+            targetElement.dispatchEvent(mouseEvent);
+            targetElement.focus();
+        });
+    };
+    SocketsComponent.prototype.keyEventEmitter = function () {
+        var _this = this;
+        this.socketService.getKeyEvent()
+            .subscribe(function (event) {
+            _this.testForm.controls[event.targetElement].setValue(event.newValue);
+        });
+    };
+    SocketsComponent.prototype.changeSelectState = function () {
+        var _this = this;
+        this.socketService.getSelectEvent()
+            .subscribe(function (event) {
+            _this.testForm.controls[event.targetElement].setValue(event.newValue);
+        });
+    };
+    SocketsComponent.prototype.catchClick = function (event) {
+        if (!event.isTrusted) { // if event initiated programatically
+            return; // don't react to it
+        }
+        if (event.clientX + event.clientY === 0) { // bug
+            return;
+        }
+        console.log(event);
+        this.socketService.sendClick([event.clientX, event.clientY]);
+    };
+    SocketsComponent.prototype.catchTextInput = function (event) {
+        var newValue = event.target.value + event.key;
+        this.keyboardEventHandler(event, newValue);
+    };
+    SocketsComponent.prototype.catchBackspace = function (event) {
+        var newValue = event.target.value;
+        this.keyboardEventHandler(event, newValue);
+    };
+    SocketsComponent.prototype.keyboardEventHandler = function (event, newValue) {
+        var eventInfo = {
+            targetElement: event.target.getAttribute('formcontrolname'),
+            newValue: newValue
+        };
+        this.socketService.sendKeysEvent(eventInfo);
+    };
+    SocketsComponent.prototype.catchSelectChange = function (event) {
+        if (event.target.nodeName !== 'SELECT') { // prevent events from checkboxes
+            return;
+        }
+        var eventInfo = {
+            targetElement: event.target.getAttribute('formcontrolname'),
+            newValue: event.target.value
+        };
+        this.socketService.sendSelectEvent(eventInfo);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:mousemove', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], SocketsComponent.prototype, "onMouseMove", null);
+    SocketsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-sockets',
+            template: __webpack_require__(/*! ./sockets.component.html */ "./src/app/sockets/sockets.component.html"),
+            styles: [__webpack_require__(/*! ./sockets.component.scss */ "./src/app/sockets/sockets.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_socket_service_service__WEBPACK_IMPORTED_MODULE_2__["SocketService"]])
+    ], SocketsComponent);
+    return SocketsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -8905,6 +9334,8 @@ __webpack_require__.r(__webpack_exports__);
  * APPLICATION IMPORTS
  */
 
+// fix for socket's error
+window.global = window;
 
 
 /***/ }),
@@ -8918,6 +9349,17 @@ __webpack_require__.r(__webpack_exports__);
 
 module.exports = __webpack_require__(/*! D:\syncforms\app-client\src\main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 
