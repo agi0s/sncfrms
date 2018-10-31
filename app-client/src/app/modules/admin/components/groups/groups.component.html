@@ -1,0 +1,38 @@
+<section *ngIf="dataSource">
+<mat-table [dataSource]="dataSource" *ngIf="dataSource" matSort>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Title
+        </mat-header-cell>
+        <mat-cell *matCellDef="let group">
+            {{group.name}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            City
+        </mat-header-cell>
+        <mat-cell *matCellDef="let group">
+            {{group.city}}
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['name', 'city']">
+    </mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: ['name', 'city']">
+    </mat-row>
+
+</mat-table>
+
+
+<mat-toolbar fxLayout="row-reverse" class="list--tolbar">
+    <mat-paginator [pageSize]="10"
+                   [pageSizeOptions]="[5,10,25]"
+                   fxFlex="1">
+    </mat-paginator>
+    <app-crud fxFlex="1">
+    </app-crud>
+</mat-toolbar>
+
+</section>

@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'
 import { SocketsComponent } from './sockets/sockets.component';
 import { MasterInterviewComponent } from './master-interview/master-interview.component';
+import { AdminComponent } from './modules/admin/admin.component';
 
 const routes: Routes = [
     { path: 'candidate', component: SocketsComponent },
-    { path: 'master', component: MasterInterviewComponent }
+    { path: 'master', component: MasterInterviewComponent },
+    { path: 'admin', component: AdminComponent }
 ]
 @NgModule({
     declarations: [],

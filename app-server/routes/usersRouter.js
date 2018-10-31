@@ -14,4 +14,10 @@ router.get('/', checkAuth, (req, res) => {
     res.send('Got it!');
 });
 
+//admin panel routes
+router.get('/users', usersController.getUsers);
+router.get('/groups', usersController.getGroups);
+router.post('/adduser', usersController.registerUser);
+router.post('/addgroup', usersController.addGroup);
+
 module.exports = router;

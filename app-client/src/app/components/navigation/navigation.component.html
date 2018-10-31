@@ -1,0 +1,17 @@
+<mat-menu #menu direction="horizontal" fxHide.gt-sm="true" class="mobile">
+  <nav>
+      <a routerLink="/admin" mat-menu-item routerLinkActive="activelink">Admin</a>
+      <a routerLink="/master" mat-menu-item routerLinkActive="activelink">Master</a>
+      <a routerLink="/candidate" mat-menu-item routerLinkActive="activelink">Candidate</a>
+  </nav>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" fxHide.gt-sm="true">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+<nav fxLayout="row" fxHide.lt-md="true" router-link-active>
+    <a routerLink="/admin" mat-menu-item routerLinkActive="activelink">Admin</a>
+    <a routerLink="/master" mat-menu-item routerLinkActive="activelink">Master</a>
+    <a routerLink="/candidate" mat-menu-item routerLinkActive="activelink">Candidate</a>
+</nav>

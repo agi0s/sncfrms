@@ -1,4 +1,5 @@
 const User = require('../schemas/userSchema');
+const Group = require('../schemas/groupSchema');
 const passport = require('passport');
 
 exports.registerUser = function(req, res, next) {
@@ -38,3 +39,34 @@ exports.logoutUser = function(req, res) {
     req.logout();
     res.redirect('/');
 }
+
+//admin panel
+exports.getUsers = function(req, res) {
+    User.find((err, users) => {
+        if (err) {
+            throw err;
+        }
+        return res.json(users);
+    })
+};
+
+exports.getGroups = function(req, res) {
+    Group.find((err, groups) => {
+        if (err) {
+            throw err;
+        }
+        return res.json(groups);
+    })
+};
+
+exports.addGroup = function(req, res) {
+    let group = new Group(req.body);
+    group.save()
+        .then(group => {
+            console.log(`${group.title} added`);
+        })
+        .catch(err => {
+            console.log('Failed to add. ', err);
+        })
+        .subscribe();
+};

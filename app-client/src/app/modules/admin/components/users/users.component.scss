@@ -1,0 +1,15 @@
+.mat-header-row {
+    height: 64px;
+}
+
+.mat-row:hover {
+    background-color: rgba(#3f51b5, 0.1);
+}
+
+.list--tolbar {
+    background-color: #fff;
+}
+
+.list--tolbar mat-paginator {
+    flex-grow: 1;
+}

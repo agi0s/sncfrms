@@ -16,13 +16,18 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { SocketsComponent } from './sockets/sockets.component';
 import { MasterInterviewComponent } from './master-interview/master-interview.component';
+import { AdminModule } from './modules/admin/admin.module';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         SocketsComponent,
-        MasterInterviewComponent
+        MasterInterviewComponent,
+        NavigationComponent
     ],
     imports: [
         AuthModule,
@@ -31,8 +36,14 @@ import { MasterInterviewComponent } from './master-interview/master-interview.co
         HttpClientModule,
         MaterialModule,
         BrowserAnimationsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AdminModule,
+        FlexLayoutModule,
+        FormsModule
     ],
+    exports: [
+        FormsModule
+    ], 
     providers: [
         HttpService
     ],

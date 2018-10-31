@@ -1,0 +1,59 @@
+<section *ngIf="dataSource">
+<mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Name
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+            {{user.name}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="group">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Group
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+            {{user.group}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Username
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+            {{user.username}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Email
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+            {{user.email}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Role
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+            {{user.role}}
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['name', 'group', 'username', 'email', 'role']">
+    </mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: ['name', 'group', 'username', 'email', 'role']">
+    </mat-row>
+</mat-table>
+
+<mat-toolbar fxLayout="row-reverse" class="list--tolbar">
+        <mat-paginator [pageSize]="10"
+                       [pageSizeOptions]="[5,10,25]"
+                       fxFlex="1">
+        </mat-paginator>
+        <app-crud fxFlex="1">
+        </app-crud>
+</mat-toolbar>
+</section>

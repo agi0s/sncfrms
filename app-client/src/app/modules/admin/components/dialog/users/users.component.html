@@ -1,0 +1,115 @@
+<h2 mat-dialog-title>Add new user</h2>
+      <mat-dialog-content>
+          <form novalidate #userForm="ngForm">
+            
+            <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Username" 
+                      name="username"
+                      ngModel
+                      #username="ngModel"
+                      minlength="2"
+                      required>
+              </mat-form-field>
+                <div *ngIf="username.errors?.required && username.touched" class="error">
+                 Username is required.
+               </div>
+               <div *ngIf="username.errors?.minlength && username.touched" class="error">
+                 Minimum of 2 characters.
+               </div>
+               <br>
+
+               <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Password" 
+                      name="password"
+                      ngModel
+                      #password="ngModel"
+                      minlength="2"
+                      required
+                      type="password" 
+                      >
+              </mat-form-field>
+                <div *ngIf="password.errors?.required && password.touched" class="error">
+                 Password is required.
+               </div>
+               <div *ngIf="password.errors?.minlength && password.touched" class="error">
+                Minimum of 2 characters.
+               </div>
+               <br>
+               <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Name" 
+                      name="name"
+                      ngModel
+                      #name="ngModel"
+                      minlength="2"
+                      required>
+              </mat-form-field>
+                <div *ngIf="name.errors?.required && name.touched" class="error">
+                 Name is required.
+               </div>
+               <div *ngIf="name.errors?.minlength && name.touched" class="error">
+                 Minimum of 2 characters.
+               </div>
+               <br>
+               <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Email" 
+                      name="email"
+                      ngModel
+                      #email="ngModel"
+                      minlength="2"
+                      required>
+              </mat-form-field>
+                <div *ngIf="email.errors?.required && email.touched" class="error">
+                 Email is required.
+               </div>
+               <div *ngIf="email.errors?.minlength && email.touched" class="error">
+                Minimum of 2 characters.
+               </div>
+               <br>
+               <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Group" 
+                      name="group"
+                      ngModel
+                      #group="ngModel"
+                      minlength="2"
+                      required>
+              </mat-form-field>
+                <div *ngIf="group.errors?.required && group.touched" class="error">
+                 Group is required.
+               </div>
+               <div *ngIf="group.errors?.minlength && group.touched" class="error">
+                Minimum of 2 characters.
+               </div>
+               <br>
+               <mat-form-field>
+                  <input 
+                      matInput 
+                      placeholder="Role" 
+                      name="role"
+                      ngModel
+                      #role="ngModel"
+                      minlength="2"
+                      required>
+              </mat-form-field>
+                <div *ngIf="role.errors?.required && role.touched" class="error">
+                 Role is required.
+               </div>
+               <div *ngIf="role.errors?.minlength && role.touched" class="error">
+                Minimum of 2 characters.
+               </div>
+
+          </form>
+      </mat-dialog-content>
+      <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="warn"> Cancel </button>
+        <button mat-raised-button [mat-dialog-close]="userForm.value" color="primary"> Add </button>
+      </mat-dialog-actions>

@@ -1,24 +1,33 @@
 import { NgModule } from '@angular/core';
-
-//import {MatListModule} from '@angular/material/list';
 import { 
     MatToolbarModule, 
     MatIconModule, 
     MatSidenavModule, 
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
 } from '@angular/material';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
-    imports: [
-        //MatListModule
-    ],
     exports: [
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
         MatButtonModule,
-        MatMenuModule
-    ],
+        MatMenuModule,
+        MatListModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule
+    ]
 })
+
 export class MaterialModule {}
